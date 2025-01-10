@@ -349,13 +349,14 @@
 
 
 		
-		<p><b> <font size="6">  ドメインに依存した命名支援システム　</font> </b></p>
-		<p>入力したキーワードに対応する識別子を出力します</p>
+		<p><b> <font size="6"> たいとる </font> </b></p>
+		<p>入力したキーワードに対応する変数を出力</p>
 
 
 		<br>
 
-		<p>データセットのドメイン：</p>
+
+		<p>出力するタイプ：</p>
 		<select id="type" name="type">
 			<option value="game">ゲーム</option>
 			<option value="image">画像処理</option>
@@ -364,7 +365,7 @@
 
 		<br>
 				
-		<p>データセットの言語：</p>
+		<p>出力する言語：</p>
 <!--
 		<input type="checkbox" id="languageJ" name="language" value="java" checked>Java
 		<input type="checkbox" id="languageP" name="language" value="python">Python
@@ -378,7 +379,7 @@
 
 		<br>
 		
-		<p>出力する識別子：</p>
+		<p>出力するタイプ：</p>
 		<select id="henkan" name="henkan">
 			<option value="variable">変数</option>
 			<option value="method">関数</option>
@@ -420,19 +421,24 @@
 		<br>
 		<br>
 
-
-
-
-
-		
-
-<!--				
 		<p>____________________________________________________OR______________________________________________________</p>
 
 		
 		<br>
 		
 		
+<!--				
+		<p>出力に使うファイル選択：</p>		
+
+		<select name="path" id="path" disabled>
+			<option disabled selected>パスを選択してください</option>
+		</select>
+		<button onclick="setMenuOptions2()">更新</button>
+		
+		<input type="file" id="folderInput" webkitdirectory>
+		<button onclick="getFolderNames()">フォルダを取得</button>
+		<pre id="fileList"></pre>
+-->
 		
 		
 		<div class="container">
@@ -453,13 +459,6 @@
 
 		<br>
 
--->
-
-
-
-
-
-		
 		<p>____________________________________________________________________________________________________________</p>
 
 		<br>
