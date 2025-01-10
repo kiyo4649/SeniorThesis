@@ -9,7 +9,6 @@
 
 　　　　　
 https://kiyo4649.github.io/SeniorThesis/
-
 　　　　　
 
 //////////////// システムの説明　////////////////
