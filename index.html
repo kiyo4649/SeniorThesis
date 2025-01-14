@@ -131,46 +131,33 @@
 				let inputValue = '';
 
 				if (analysisType == 'correlation'){
-					if (!document.getElementById('csvFileInput2').files[0]){
+					let filePath = 'assets/' + languageValue + '/' + typeValue + '_' + 'correlation' + '_' + henkanValue + '.csv';
 
-						let filePath = 'assets/' + languageValue + '/' + typeValue + '_' + 'correlation' + '_' + henkanValue + '.csv';
+					//表形式
+					//importCSV(filePath);
 
-						//表形式
-						//importCSV(filePath);
-
-						//配列形式
-						dataArray = fetchCSV(filePath);
-						dataArray
-							.then(data => {
-								console.log(data);
-							})
-							.catch(error => console.error('Error:', error));
-					}						
-					else{
-						readCSV();
-						dataArray = fetchCSV( document.getElementById('csvFileInput2').value );
-					}
+					//配列形式
+					dataArray = fetchCSV(filePath);
+					dataArray
+						.then(data => {
+							console.log(data);
+						})
+						.catch(error => console.error('Error:', error));
 					
 					// input要素の値を取得
 					inputValue = document.getElementById("input2").value;
 
 				}
 				else{
-					if (!document.getElementById('csvFileInput1').files[0]){
 
-						let filePath = 'assets/' + languageValue + '/' + typeValue + '_' + 'count' + '_' + henkanValue + '.csv';
-						dataArray = fetchCSV(filePath);
-						dataArray
-							.then(data => {
-								console.log(data);
-							})
-							.catch(error => console.error('Error:', error));
-					}						
-					else{
-						readCSV();
-						dataArray = fetchCSV( document.getElementById('csvFileInput1').value );
-					}
-					
+					let filePath = 'assets/' + languageValue + '/' + typeValue + '_' + 'count' + '_' + henkanValue + '.csv';
+					dataArray = fetchCSV(filePath);
+					dataArray
+						.then(data => {
+							console.log(data);
+						})
+						.catch(error => console.error('Error:', error));
+				
 					// input要素の値を取得
 					inputValue = document.getElementById("input1").value;
 
@@ -336,7 +323,7 @@
 			}
 
 
-
+			document.addEventListener("DOMContentLoaded", function() { getInputValue('searchKeyword'); });
 
 
 
@@ -345,18 +332,15 @@
 		</script>
 
 
-
-
-
 		
-		<p><b> <font size="6"> たいとる </font> </b></p>
-		<p>入力したキーワードに対応する変数を出力</p>
+		<p><b> <font size="6"> 識別子提案システム </font> </b></p>
+		<p>入力したキーワードに対応する識別子を出力します</p>
 
 
 		<br>
 
 
-		<p>出力するタイプ：</p>
+		<p>データセットのドメイン：</p>
 		<select id="type" name="type">
 			<option value="game">ゲーム</option>
 			<option value="image">画像処理</option>
@@ -365,11 +349,7 @@
 
 		<br>
 				
-		<p>出力する言語：</p>
-<!--
-		<input type="checkbox" id="languageJ" name="language" value="java" checked>Java
-		<input type="checkbox" id="languageP" name="language" value="python">Python
--->
+		<p>データセットの言語：</p>
 
 		<select id="language" name="language">
 			<option value="java">Java</option>
@@ -379,7 +359,7 @@
 
 		<br>
 		
-		<p>出力するタイプ：</p>
+		<p>出力する識別子：</p>
 		<select id="henkan" name="henkan">
 			<option value="variable">変数</option>
 			<option value="method">関数</option>
@@ -417,49 +397,6 @@
 			</div>
 		</div>
 		
-
-		<br>
-		<br>
-
-		<p>____________________________________________________OR______________________________________________________</p>
-
-		
-		<br>
-		
-		
-<!--				
-		<p>出力に使うファイル選択：</p>		
-
-		<select name="path" id="path" disabled>
-			<option disabled selected>パスを選択してください</option>
-		</select>
-		<button onclick="setMenuOptions2()">更新</button>
-		
-		<input type="file" id="folderInput" webkitdirectory>
-		<button onclick="getFolderNames()">フォルダを取得</button>
-		<pre id="fileList"></pre>
--->
-		
-		
-		<div class="container">
-			<div class="column left">
-				
-				<p>出力に使うファイルパス入力：</p>
-				<input type="file" id="csvFileInput1" accept=".csv">
-
-			</div>
-			<div class="column right">
-
-				<p>出力に使うファイルパス入力：</p>
-				<input type="file" id="csvFileInput2" accept=".csv">
-				
-			</div>
-		</div>
-
-
-		<br>
-
-		<p>____________________________________________________________________________________________________________</p>
 
 		<br>
 		<br>
